@@ -3,11 +3,12 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 
-from conf import settings
-from home.views import home_page
+from django.conf import settings
+
 
 urlpatterns = [
-    path('',home_page),
+    path('',include('home.urls')),
+    path('services/',include('services.urls')),
     path('admin/', admin.site.urls),
 ]
 
